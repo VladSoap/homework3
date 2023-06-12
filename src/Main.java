@@ -1,9 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        Vehicle car = new Car("BMW");
-        Vehicle truck = new Truck("MAN");
-        car.drive();
-        truck.drive();
+        Vehicle[] vehicles = new Vehicle[3];
+        vehicles[0] = new Car("Toyota");
+        vehicles[1] = new Truck("Ford");
+        for (Vehicle vehicle : vehicles) {
+            vehicle.drive();
+        }
         //Task 2
         try {
             SecondClass secondClass = new SecondClass();
@@ -32,13 +34,14 @@ class Car extends Vehicle {
     }
     @Override
     public void drive() {
-        System.out.println("Car of  " + getBrand() + " drives");
+        System.out.println("Car of " + getBrand() + " drives");
     }
 }
 class Truck extends Vehicle {
     public Truck(String brand) {
         super(brand);
     }
+
     @Override
     public void drive() {
         System.out.println("Truck of " + getBrand() + " drives");
